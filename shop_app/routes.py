@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
@@ -164,45 +164,7 @@ def subscribe_url():
     collection = url_for('collection_url')
     login = url_for('customer_login_url')
     admin = url_for('admin_login_url')
-    return f"""
-        <!doctype>
-        <html>
-            <head>
-                <title>Subscribe</title>
-                <link rel="stylesheet" href="{url_for('static', filename='mainStyle.css')}">
-            </head>
-            <body>
-                <h1>
-                    Plantify
-                </h1>
-
-                <h2>
-                    Subscribe to the Mailing List
-                </h2>
-
-                <p>
-                    We're an online shop for indoor plants. Checkout our
-                        <a href="{collection}">plant collection.</a>
-                    <br>
-                    Email plantify@yopmail.co.uk to subscribe to our mailing list to get tips and tricks to help your plants thrive indoors. Send your full name and email address.
-                </p>
-                <hr>
-                <h2>
-                    Menu
-                </h2>
-                    <a href="{home_page}">Home</a>
-                    <a href="{about_us}">About Us</a>
-                    <a href="{collection}">Collection</a>
-                    <b>Subscribe</b>
-                    <a href="{login}">Login</a>
-                    <a href="{admin}">Administrator Login</a>
-                <hr>
-                <h8>
-                    copyright Plantify ltd
-                </h8>
-            </body>
-        </html> 
-        """
+    return render_template('subscribe.html', title='Subscribe')
 
 
 # SUGGESTION: INTEGRATED INTO A DATABASE TO CHECK CREDENTIALS (USERNAME = EMAIL, PASSWORD)

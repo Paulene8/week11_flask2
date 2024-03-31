@@ -1,0 +1,25 @@
+{% extends "layout.html" %}   <!-- inheriting layout.html style -->
+{% block title %} {{title}} {% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>Subscribe</h1>
+<!--<div div class='form'>-->
+  <p class="important">
+    Fill in the form below to subscribe to our mailing list.
+<!--                <form method='POST' action=' '>-->
+<!--                    {{ form.hidden_tag() }}-->
+<!--                    {{ form.first_name.label }} {{ form.first_name }}-->
+<!--                    <br>-->
+<!--                    {{ form.last_name.label }} {{ form.lastt_name }}-->
+<!--                    <br>-->
+<!--                    {{ form.submit }}-->
+<!--                {{ message }}-->
+<!--                </form>-->
+<!--</div>-->
+<hr>
+{% endblock %}
